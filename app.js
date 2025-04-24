@@ -6,7 +6,10 @@ const app = express();
 
 // 
 app.get('/',(req,res)=>{
-    res.send('<h1>hello world!</h1>')
+    // res.send('<h1>hello world!</h1>')
+    res.json({
+        name:"mikal"
+    })
 })
 
 // we can write anything in place of req and res but they are the standards
