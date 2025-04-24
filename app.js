@@ -18,6 +18,36 @@ app.get('/about',(hehe,haha)=>{
 })
 
 
+app.get('/books',(req,res)=>{
+    res.json({
+        message:"book fetched successfully"
+    })
+})
+
+app.post('/books',(req,res)=>{
+    res.json({
+        message:"book added successfully"
+    })
+})
+
+app.delete('/books/:id',(req,res)=>{
+    res.json({
+        message:"book deleted successfully"
+    })
+})
+
+app.patch('/books/:id',(req,res)=>{
+    res.json({
+        message:"book updated successfully"
+    })
+})
+
+app.put('/books',(req,res)=>{
+    res.json({
+        message:"book updated successfully"
+    })
+})
+
 // port allocation
 app.listen(3000,function(){
     console.log("Server has at port 3000")
