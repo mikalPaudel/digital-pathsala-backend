@@ -1,6 +1,8 @@
 const express = require("express")
 const app = express();
 
+require("./database/connection")
+
 // above 2 line can also be written as:
 // const app = require("express")()
 
