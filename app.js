@@ -48,6 +48,9 @@ app.put('/books',(req,res)=>{
     })
 })
 
+
+postgresql:"//postgres.jsakeazecmmsxijnjzfu:[YOUR-PASSWORD]@aws-0-ap-south-1.pooler.supabase.com:6543/postgres?pgbouncer=true"
+
 // port allocation
 app.listen(3000,function(){
     console.log("Server has at port 3000")
