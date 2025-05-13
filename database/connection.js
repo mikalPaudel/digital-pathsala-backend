@@ -35,6 +35,9 @@ const db = {}
 db.Sequelize = Sequelize
 db.sequelize = sequelize
 
+// dont add this in variable but the db works as var here or any object but not variable
+// this is code to import and trigger table named book.model.js
+require("./models/books.model")(sequelize, DataTypes)
 
 //export certain object to use in other files
 module.exports = db
