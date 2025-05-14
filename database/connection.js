@@ -5,7 +5,7 @@
 // Sequelize is a class
 const {Sequelize,DataTypes} = require("sequelize")
 
-
+ 
 // new Sequelize creates object of class Sequelize. 
 // sequelize is the object here not the same one as above sequelize.
 const sequelize = new Sequelize("postgresql://postgres.jsakeazecmmsxijnjzfu:Mikal@Paudel@aws-0-ap-south-1.pooler.supabase.com:6543/postgres")
@@ -37,7 +37,14 @@ db.sequelize = sequelize
 
 // dont add this in variable but the db works as var here or any object but not variable
 // this is code to import and trigger table named book.model.js
-require("./models/books.model")(sequelize, DataTypes)
+db.books= require("./models/books.model")(sequelize, DataTypes)
+
+// migration code here. 
+// dont do force true because it removes all data from table 
+// so do alter:true but only do it when we have to migrate table or alter table 
+ sequelize.sync({alter: false}).then(()=>{
+    console.log("Successfully migrated")
+ })
 
 //export certain object to use in other files
 module.exports = db

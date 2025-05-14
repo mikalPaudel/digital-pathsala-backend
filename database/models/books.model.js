@@ -3,7 +3,8 @@
 
 // pathhaaudaa parameter ie. in fn, paaudaa argument ie. bookModel(12,14)
 const bookModel = (sequelize,DataTypes)=>{
-    sequelize.define("book"),{
+
+    const Book= sequelize.define("book",{
         // columns in the table named book 
         bookName:{
             type: DataTypes.STRING,
@@ -19,10 +20,10 @@ const bookModel = (sequelize,DataTypes)=>{
             type: DataTypes.STRING,
             defaultValue: "Unknown"
         }
-    }
+    })
     return Book
 }
 
 // bookModel(12,14)
 
-model.exports= bookModel
+module.exports= bookModel
